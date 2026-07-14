@@ -2,4 +2,4 @@
 draft = false
 title = 'Play'
 +++
-# Play Some Bingo!
+## Play Some Bingo!

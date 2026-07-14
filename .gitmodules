@@ -1,3 +1,6 @@
 [submodule "bingo.maker/themes/ananke"]
 	path = bingo.maker/themes/ananke
 	url = https://github.com/gohugo-ananke/ananke
+[submodule "hugo-theme-bootstrap"]
+	path = hugo-theme-bootstrap
+	url = https://github.com/razonyang/hugo-theme-bootstrap.git
