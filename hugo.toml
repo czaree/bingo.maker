@@ -1,4 +1,16 @@
 baseURL = 'https://example.org/'
 locale = 'en-us'
 title = 'bingo.maker'
-theme = 'ananke'
+theme = ''
+[[menus.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 1
+[[menus.main]]
+    name = "Create"
+    pageRef = "/create"
+    weight = 2
+[[menus.main]]
+    name = "Play"
+    pageRef = "/play"
+    weight = 3
