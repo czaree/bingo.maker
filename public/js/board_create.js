@@ -1,5 +1,7 @@
 function generateLink() {
     const input = document.getElementById("bingoListInput").value;
+
+    // separate squares by commans/new lines
     const squares = input.split(/[\n,]+/).map(
         s => s.trim()
     ).filter(s => s.length > 0);
@@ -9,11 +11,13 @@ function generateLink() {
         return;
     }
 
+    // construct URL
     const encodedSquares = encodeURIComponent(squares.join(","));
 
     const baseUrl = window.location.origin + '/play/';
     const boardUrl = `${baseUrl}?squares=${encodedSquares}`
 
+    // show 'success' window + new play link
     document.getElementById('shareLink').value = boardUrl;
     document.getElementById('playLink').href = boardUrl;
     document.getElementById('result').style.display = 'block';

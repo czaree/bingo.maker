@@ -30,7 +30,7 @@
 				<link>//localhost:1313/play/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
 				<guid>//localhost:1313/play/</guid>
-				<description>&lt;h2 id=&#34;play-some-bingo&#34;&gt;Play Some Bingo!&lt;/h2&gt;&#xA;&lt;div id = &#34;bingoBoard&#34;&gt;&#xD;&#xA;&#xD;&#xA;&lt;/div&gt;</description>
+				<description>&lt;h2 id=&#34;play-some-bingo&#34;&gt;Play Some Bingo!&lt;/h2&gt;&#xA;&lt;link rel = &#34;stylesheet&#34; type = &#34;text/css&#34; href = &#34;/bingo.css&#34;&gt;&#xD;&#xA;&#xD;&#xA;&lt;div id = &#34;bingoBoard&#34; style=&#34;display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));  gap: 5px; overflow-wrap: break-word;&#34;&gt;&#xD;&#xA;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;script src = &#34;/js/board_play.js&#34;&gt;&lt;/script&gt;</description>
 			</item>
 	</channel>
 </rss>

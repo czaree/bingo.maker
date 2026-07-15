@@ -1,0 +1,23 @@
+.cell {
+    display: flex;
+    padding: 0.5rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 8vh;
+    white-space: normal;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cellText {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.cell:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.45);
+}
