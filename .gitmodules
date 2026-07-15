@@ -4,3 +4,6 @@
 [submodule "hugo-theme-bootstrap"]
 	path = hugo-theme-bootstrap
 	url = https://github.com/razonyang/hugo-theme-bootstrap.git
+[submodule "themes/hugo-classless"]
+	path = themes/hugo-classless
+	url = https://github.com/mozanunal/hugo-classless.git

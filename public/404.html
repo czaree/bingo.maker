@@ -1,262 +1,329 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>bingo.maker</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="">
-    <meta name="generator" content="Hugo 0.164.0">
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
+<html lang="en">
 
-    <link rel="stylesheet" href="/ananke/css/main.css">
-    <script>
-  (function () {
-    "use strict";
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="">
+  <link rel="canonical" href="//localhost:1313/404.html"><link id="theme-style-base" rel="stylesheet" href="/css/base.min.034fd0c42a0fb867ac1f345749c76d1f83d22b8b59de0ded351e1a9bced9ef00.css"
+    integrity="sha256-A0/QxCoPuGesHzRXScdtH4PSK4tZ3g3tNR4am87Z7wA="><link id="theme-style" rel="stylesheet" href="/css/light.min.ae6e55ac99caa7ddd70e175e5b4b552d77c723fe20bbcc8faa618413e13e8152.css"
+    integrity="sha256-rm5VrJnKp93XDhdeW0tVLXfHI/4gu8yPqmGEE&#43;E&#43;gVI="><link id="theme-style-dark" rel="stylesheet" href="/css/dark.min.0ac0ede38e9c5caa893388ebdd523b616f147c59c3c5ef58784434b21c46c0f5.css"
+    integrity="sha256-CsDt446cXKqJM4jr3VI7YW8UfFnDxe9YeEQ0shxGwPU=" media="(prefers-color-scheme: dark)"><style>
+   
+  #skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  #skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    padding: 0.5rem;
+  }
+
+  pre code,
+  code {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+   
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  figcaption {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+   
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    overflow: visible;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+
+  header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    align-items: center;
+  }
+
+  header nav ul li + li::before {
+    content: "|";
+    padding: 0 0.4rem;
+    opacity: 0.4;
+  }
+
+  header nav a.active {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  @media (max-width: 600px) {
+    header nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+
+   
+  .dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    margin: 0;
+    min-height: auto;
+    min-width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--body-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition-base);
+    box-shadow: none;
+    line-height: 1;
+  }
+
+  .dark-mode-toggle:hover {
+    opacity: 0.7;
+    box-shadow: none;
+  }
+
+  .dark-mode-toggle:active {
+    transform: none;
+    box-shadow: none;
+    filter: none;
+  }
+
+  .dark-mode-toggle:hover::after {
+    background-color: transparent;
+  }
+
+  .dark-mode-toggle svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: currentColor;
+  }
+
+  .dark-mode-toggle .icon-sun { display: none; }
+  .dark-mode-toggle .icon-moon { display: none; }
+  .dark-mode-toggle .icon-system { display: block; }
+
+  html[data-theme-pref="light"] .dark-mode-toggle .icon-sun { display: block; }
+  html[data-theme-pref="light"] .dark-mode-toggle .icon-moon { display: none; }
+  html[data-theme-pref="light"] .dark-mode-toggle .icon-system { display: none; }
+
+  html[data-theme-pref="dark"] .dark-mode-toggle .icon-sun { display: none; }
+  html[data-theme-pref="dark"] .dark-mode-toggle .icon-moon { display: block; }
+  html[data-theme-pref="dark"] .dark-mode-toggle .icon-system { display: none; }
+
+  html[data-theme-pref="system"] .dark-mode-toggle .icon-sun { display: none; }
+  html[data-theme-pref="system"] .dark-mode-toggle .icon-moon { display: none; }
+  html[data-theme-pref="system"] .dark-mode-toggle .icon-system { display: block; }
+
+</style>
+
+
+
+<link id="syntax-light" rel="stylesheet"
+      href="/css/syntax-light.min.e114b8cc38f57d520f373580c935a518bc6afd6dec4f1d682365cdbcf5c8218a.css"
+      media="(prefers-color-scheme: light)"
+/>
+<link id="syntax-dark" rel="stylesheet"
+      href="/css/syntax-dark.min.d8ad658c02e1ff4f154ed92513da0a2763959be0a25adfd74e26f37b64eee8fd.css"
+      media="(prefers-color-scheme: dark)"
+/>
+<title>404 Page not found | bingo.maker</title><meta property="og:title" content="404 Page not found">
+<meta property="og:description" content="">
+<meta property="og:type" content="website">
+<meta property="og:url" content="//localhost:1313/404.html">
+<meta property="og:site_name" content="bingo.maker"><meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="404 Page not found">
+<meta name="twitter:description" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "bingo.maker",
+  "url": "//localhost:1313/"
+}
+</script></head>
+
+<body>
+  <a id="skip-link" href="#main-content">Skip to content</a>
+
+  <header><nav aria-label="Main navigation">
+      <ul>
+        <li><strong>bingo.maker</strong></li>
+      </ul>
+      <ul><li>
+          <a href="/">Home</a>
+        </li><li>
+          <a href="/">Create</a>
+        </li><li>
+          <a href="/">Play</a>
+        </li><li>
+  <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle color scheme" title="Toggle color scheme">
+    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+    </svg>
+    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+    </svg>
+    <svg class="icon-system" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path fill-rule="evenodd" d="M2.25 5.25a3 3 0 013-3h13.5a3 3 0 013 3V15a3 3 0 01-3 3h-3v.75A.75.75 0 0115 19.5H9a.75.75 0 01-.75-.75V18h-3a3 3 0 01-3-3V5.25zm1.5 0A1.5 1.5 0 015.25 3.75h13.5a1.5 1.5 0 011.5 1.5V15a1.5 1.5 0 01-1.5 1.5H5.25A1.5 1.5 0 013.75 15V5.25z" clip-rule="evenodd" />
+    </svg>
+  </button>
+</li>
+
+<script>
+(function() {
+  var STORAGE_KEY = 'hugo-classless-color-scheme';
+  var PREF_ATTR = 'data-theme-pref';
+  var THEME_ATTR = 'data-theme';
+
+  function getPrefersDark() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  function normalizePref(pref) {
+    return (pref === 'light' || pref === 'dark') ? pref : 'system';
+  }
+
+  function resolveEffective(pref) {
+    return pref === 'system' ? (getPrefersDark() ? 'dark' : 'light') : pref;
+  }
+
+  function setMediaForMode(el, mode, lightMedia, darkMedia) {
+    if (!el) return;
+    if (mode === 'dark') el.media = darkMedia;
+    else if (mode === 'light') el.media = lightMedia;
+    else el.media = el.getAttribute('data-default-media') || '';
+  }
+
+  function setEnabled(el, enabled) {
+    if (!el) return;
+    el.disabled = !enabled;
+  }
+
+  function applyTheme(pref) {
+    var effective = resolveEffective(pref);
+    document.documentElement.setAttribute(PREF_ATTR, pref);
+    document.documentElement.setAttribute(THEME_ATTR, effective);
 
     
+    var syntaxLight = document.getElementById('syntax-light');
+    var syntaxDark = document.getElementById('syntax-dark');
+    setMediaForMode(syntaxLight, effective, 'all', 'not all');
+    setMediaForMode(syntaxDark, effective, 'not all', 'all');
+
     
-    function revealButtons() {
-      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
-      for (var i = 0; i < buttons.length; i++) {
-        buttons[i].hidden = false;
+    var themeDark = document.getElementById('theme-style-dark');
+    setMediaForMode(themeDark, effective, 'not all', 'all');
+
+    var isDark = effective === 'dark';
+    setEnabled(syntaxLight, !isDark);
+    setEnabled(syntaxDark, isDark);
+    setEnabled(themeDark, isDark);
+  }
+
+  
+  function storeDefaults() {
+    ['syntax-light', 'syntax-dark', 'theme-style-dark'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && !el.getAttribute('data-default-media')) {
+        el.setAttribute('data-default-media', el.media || '');
       }
-    }
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", revealButtons);
-    } else {
-      revealButtons();
-    }
-
-    function flash(button) {
-      var label = button.querySelector(".code-copy-label");
-      var previous = label ? label.textContent : null;
-      button.classList.add("is-copied");
-      if (label) label.textContent = "Copied";
-      window.setTimeout(function () {
-        button.classList.remove("is-copied");
-        if (label && previous !== null) label.textContent = previous;
-      }, 2000);
-    }
-
-    function legacyCopy(text) {
-      var area = document.createElement("textarea");
-      area.value = text;
-      area.setAttribute("readonly", "");
-      area.style.position = "absolute";
-      area.style.left = "-9999px";
-      document.body.appendChild(area);
-      area.select();
-      var ok = false;
-      try {
-        ok = document.execCommand("copy");
-      } catch (e) {
-        ok = false;
-      }
-      document.body.removeChild(area);
-      return ok;
-    }
-
-    function copyFrom(button) {
-      var container = button.closest(".code-block");
-      if (!container) return;
-      var pre = container.querySelector("pre");
-      if (!pre) return;
-      var source = pre.querySelector("code") || pre;
-      var text = source.innerText;
-
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(
-          function () { flash(button); },
-          function () { if (legacyCopy(text)) flash(button); }
-        );
-      } else if (legacyCopy(text)) {
-        flash(button);
-      }
-    }
-
-    document.addEventListener("click", function (event) {
-      var button = event.target.closest(".code-copy");
-      if (button) copyFrom(button);
     });
-  })();
+  }
+
+  
+  var saved = null;
+  try { saved = localStorage.getItem(STORAGE_KEY); } catch(e) {}
+  var pref = normalizePref(saved);
+  
+  document.documentElement.setAttribute(PREF_ATTR, pref);
+  document.documentElement.setAttribute(THEME_ATTR, resolveEffective(pref));
+
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    storeDefaults();
+    applyTheme(pref);
+
+    var btn = document.getElementById('dark-mode-toggle');
+    if (!btn) return;
+
+    btn.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute(PREF_ATTR) || 'system';
+      var next;
+      if (current === 'light') next = 'dark';
+      else if (current === 'dark') next = 'system';
+      else next = 'light';
+
+      applyTheme(next);
+      try {
+        if (next === 'system') {
+          localStorage.removeItem(STORAGE_KEY);
+        } else {
+          localStorage.setItem(STORAGE_KEY, next);
+        }
+      } catch(e) {}
+    });
+  });
+
+  
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+    if (document.documentElement.getAttribute(PREF_ATTR) === 'system') {
+      applyTheme('system');
+    }
+  });
+})();
 </script>
+</ul>
+    </nav>
 
-    
-      
-
-    
-
-    
-
-    
-      <link rel="canonical" href="http://localhost:1313/404.html">
-    
-
-    
-    
-    <meta property="og:url" content="http://localhost:1313/404.html">
-	<meta property="og:site_name" content="bingo.maker">
-	<meta property="og:title" content="404 Page not found">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="website">
-
-	<meta itemprop="name" content="404 Page not found">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="404 Page not found">
-
-	
-  </head><body class="ma0 avenir bg-near-white development is-404">
-
-
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l center items-center justify-between">
-    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
-      
-        bingo.maker
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/" title="Home page">
-              Home
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/create/" title="Create page">
-              Create
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/play/" title="Play page">
-              Play
-            </a>
-          </li>
-          
-        </ul>
-      
-      <div class="ananke-socials"></div>
-
-    </div>
-  </div>
-</nav>
-
-    </div>
   </header>
 
-<main class="pb7" role="main">
-    <article class="center cf pv5 measure-wide-l">
-      <h1>
-        This is not the page you were looking for
-      </h1>
-    </article>
-</main><footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
-    &copy;  bingo.maker 2026 
-  </a>
-    <div><div class="ananke-socials"></div>
-</div>
-  </div>
-</footer>
+  <main id="main-content">
+  <h1>404: Page Not Found</h1>
+  <p>Sorry, the page you were looking for doesn&#39;t exist.</p>
+  <p><a href="/">Go back to the homepage</a></p>
+</main>
+
+  <footer>
+    <p>&copy; 2026 czaree.</p>
+  </footer>
+
 </body>
+
+
+
+
+
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

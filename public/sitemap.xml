@@ -6,10 +6,6 @@
   </url><url>
     <loc>//localhost:1313/categories/</loc>
   </url><url>
-    <loc>//localhost:1313/create/</loc>
-  </url><url>
-    <loc>//localhost:1313/play/</loc>
-  </url><url>
     <loc>//localhost:1313/tags/</loc>
   </url>
 </urlset>

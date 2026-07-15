@@ -16,14 +16,14 @@
 				<link>//localhost:1313/create/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
 				<guid>//localhost:1313/create/</guid>
-				<description>&lt;h2 id=&#34;create-a-bingo-board&#34;&gt;Create a Bingo Board&lt;/h2&gt;</description>
+				<description>&lt;h2 id=&#34;create-a-bingo-board&#34;&gt;Create a Bingo Board&lt;/h2&gt;&#xA;&lt;p&gt;Enter your wordbank below to create your custom bingo board. Share the generated link with friends to play together!&#xA;&lt;div id = &#34;createBoard&#34;&gt;&#xD;&#xA;    &lt;form&gt;&#xD;&#xA;        &lt;p&gt;Your Bingo Board Name:&lt;/p&gt;&#xD;&#xA;        &lt;input id = &#34;boardTitleInput&#34; type = &#34;text&#34; required&gt;&#xD;&#xA;        &lt;p&gt;Enter each of the squares in your wordbank separated by commas or new lines (at least 24 spaces are required):&lt;/p&gt;&#xD;&#xA;        &lt;textarea id = &#34;bingoListInput&#34; rows = &#34;10&#34; required&gt;&lt;/textarea&gt;&#xD;&#xA;        &lt;p&gt;Enter the name of your freespace:&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Play</title>
 				<link>//localhost:1313/play/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
 				<guid>//localhost:1313/play/</guid>
-				<description>&lt;h2 id=&#34;play-some-bingo&#34;&gt;Play Some Bingo!&lt;/h2&gt;</description>
+				<description>&lt;h2 id=&#34;play-some-bingo&#34;&gt;Play Some Bingo!&lt;/h2&gt;&#xA;&lt;p&gt;{{ play_board }}&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

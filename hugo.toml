@@ -1,12 +1,14 @@
 baseURL = '/'
 locale = 'en-us'
 title = 'bingo.maker'
-theme = 'kube'
+theme = 'hugo-classless'
 description = "make bingo cards from a word bank, then roll a card and start playing!"
 [Params]
-author = "czaree"
-github = "czaree"
-
+    author = "czaree"
+    github = "czaree"
+    themeBase = "css/base.css"
+    themeLight = "css/light.css"
+    themeDark = "css/dark.css"
 [[menus.main]]
     name = "Home"
     pageRef = "/"
