@@ -12,6 +12,13 @@
 		
 			<atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
 			<item>
+				<title>About</title>
+				<link>//localhost:1313/about/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/about/</guid>
+				<description>&lt;h3 id=&#34;what-is-bingomaker&#34;&gt;What is bingo.maker?&lt;/h3&gt;&#xA;&lt;p&gt;bingo.maker is a lightweight, online tool built to help quickly generate custom bingo cards for play.&lt;/p&gt;&#xA;&lt;h3 id=&#34;how-does-it-work&#34;&gt;How does it work?&lt;/h3&gt;&#xA;&lt;p&gt;TBD&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-does-the-site-run-on&#34;&gt;What does the site run on?&lt;/h3&gt;&#xA;&lt;p&gt;bingo.maker is powered by the &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo framework&lt;/a&gt; using the &lt;a href=&#34;https://github.com/mozanunal/hugo-classless&#34;&gt;hugo-classless&lt;/a&gt; template for styling, hosted publically on &lt;a href=&#34;https://docs.github.com/en/pages/getting-started-with-github-pages&#34;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
 				<title>Create</title>
 				<link>//localhost:1313/create/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

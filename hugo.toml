@@ -21,3 +21,7 @@ description = "make bingo cards from a word bank, then roll a card and start pla
     name = "Play"
     pageRef = "/play/"
     weight = 3
+[[menus.main]]
+    name = "About"
+    pageRef = "/about/"
+    weight = 4
