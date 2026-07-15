@@ -1,0 +1,19 @@
+<div id = "createBoard">
+    <form>
+        <p>Your Bingo Board Name:</p>
+        <input id = "boardTitleInput" type = "text" required>
+        <p>Enter each of the squares in your wordbank separated by commas or new lines (at least 24 spaces are required):</p>
+        <textarea id = "bingoListInput" rows = "10" required></textarea>
+        <p>Enter the name of your freespace:</p>
+        <input id = "freeSpaceInput" type = "text">
+        <button onclick = "generateLink()">Create New Board</button>
+    </form>
+    <aside id = "result" style="display: none;">
+        <p><strong>New board created!</strong></p>
+        <p>Share this link with players:</p>
+        <input type="text" id="shareLink" readonly style="width: 100%;">
+        <a id="playLink" href="#">Go to my board</a>
+    </aside>
+</div>
+
+<script src="/js/board_create.js"></script>

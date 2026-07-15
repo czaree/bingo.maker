@@ -1,0 +1,18 @@
+.btn {
+    vertical-align: middle;
+    min-height: 3.1rem;
+    min-width: 6.5rem;
+    display: inline-block;
+    padding: calc(var(--spacing-base) * 0.75) var(--spacing-base);
+    margin: 0.125rem 0.125rem 0.125rem 0;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}

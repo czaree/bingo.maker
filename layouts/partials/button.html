@@ -1,0 +1,27 @@
+{{- $text := .text | default "Button" -}}
+{{- $class := .class | default "btn" -}}
+
+
+{{/*link mode*/}}
+{{- if .href -}}
+<a
+    href="{{ .href }}"
+    class="{{ $class }}"
+    {{ with .target }}target="{{ . }}"{{ end }}
+    {{ with .rel }}rel="{{ . }}"{{ end }}>
+    {{ $text }}
+</a>
+
+{{- else -}}
+<button
+    type="{{ .type | default "button" }}"
+    class="{{ $class }}"
+    {{ with .id }}id="{{ . }}"{{ end }}
+    {{ with .onclick }}onclick="{{ . }}"{{ end }}
+    {{ with .name }}name="{{ . }}"{{ end }}
+    {{ with .value }}value="{{ . }}"{{ end }}
+    {{ with .disabled }}disabled{{ end }}>
+    {{ $text }}
+</button>
+
+{{- end -}}
