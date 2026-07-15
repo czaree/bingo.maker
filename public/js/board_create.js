@@ -22,5 +22,11 @@ function generateLink() {
     document.getElementById('playLink').href = boardUrl;
     document.getElementById('result').style.display = 'block';
 
-    console.log(boardUrl)
+    //console.log(boardUrl)
+
+    // wait for result to render in DOM, then scroll to it
+    const resultBox = document.getElementById("result");
+    requestAnimationFrame(() => {
+        resultBox.scrollIntoView({ behavior: 'smooth' });
+    });
 }
