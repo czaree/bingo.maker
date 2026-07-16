@@ -127,6 +127,13 @@ board.addEventListener("click", (event) => {
         }
     }
 
+    console.log(r, c, change);
+    console.log(rowCounts, colCounts, diagCount, antiDiagCount);
+
+    if (isNowSelected == false) {
+        return;
+    }
+
     let hasWon = (rowCounts[r] === cols || colCounts[c] === rows);
 
     if (boardIsSquare) {
@@ -146,19 +153,31 @@ board.addEventListener("click", (event) => {
     }
 });
 
-// generate new board when "Generate New Board" clicked
-newBoardBtn.addEventListener("click", () => {
-    newBoard(board, [...squaresBank]);
-});
+function clearBoard() {
+    // reset counters
+    rowCounts.fill(0);
+    colCounts.fill(0);
+    diagCount = 0;
+    antiDiagCount = 0;
 
-// reset aria-pressed values of all buttons to false when "Clear Board" clicked
-clearBoardBtn.addEventListener("click", () => {
+    // reset cells
     const bingoCells = document.querySelectorAll(".cell");
 
     bingoCells.forEach(cell => {
         cell.setAttribute("aria-pressed", "false");
         cell.dataset.selected = "false";
     });
+}
+
+// generate new board when "Generate New Board" clicked
+newBoardBtn.addEventListener("click", () => {
+    clearBoard();
+    newBoard(board, [...squaresBank]);
+});
+
+// reset aria-pressed values of all buttons to false when "Clear Board" clicked
+clearBoardBtn.addEventListener("click", () => {
+    clearBoard();
 });
 
 // init board on page load
