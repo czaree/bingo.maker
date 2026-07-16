@@ -1,11 +1,13 @@
-const LENGTH = 5;
-const WIDTH = 5;
+const length = 5;
+const width = 5;
+const totalCells = length * width;
 
 const clearBoardBtn = document.getElementById("clearBoardBtn");
 const newBoardBtn = document.getElementById("newBoardBtn");
 
 const board = document.getElementById("bingoBoard");
 let squares = []
+const wonLines = Set(); // track row/col/diag wins
 
 /**
  * cetches and parses wordbank from URL parameters on page load if they exist, displays
@@ -35,7 +37,6 @@ function init() {
  */
 function newBoard(board, squares) {
     // construct + render board
-    let totalCells = LENGTH * WIDTH;
     let freeSpaceIdx = Math.floor(totalCells / 2);
 
     shuffle(squares);
@@ -43,18 +44,25 @@ function newBoard(board, squares) {
     board.innerHTML = "";
 
     for (let i = 0; i < totalCells; i++) {
-        const cell = document.createElement("div");
+        const cell = document.createElement("button");
         const cellText = document.createElement("div");
         cell.classList.add("cell");
         cellText.classList.add("cellText")
 
         if (i == freeSpaceIdx) {
-            // TODO: include optional free soace customization in URL, otehrwise default to free space
+            // TODO: include optional free space customization in URL, otherwise default to free space
             cellText.innerText = "FREE SPACE";
             cellText.style.fontWeight = "bold";
         } else {
             cellText.innerText = squares.pop() || "";
         }
+
+        // mark as selected/dabbed when clicked
+        cell.setAttribute("aria-pressed", "false");
+        cell.addEventListener("click", () => {
+            const isPressed = cell.getAttribute("aria-pressed") === "true";
+            cell.setAttribute("aria-pressed", !isPressed);
+        });
 
         cell.appendChild(cellText);
         board.appendChild(cell);
@@ -79,7 +87,7 @@ function shuffle(arr) {
 }
 
 function checkWin(board) {
-
+    
 }
 
 newBoardBtn.addEventListener("click", () => {
@@ -87,7 +95,11 @@ newBoardBtn.addEventListener("click", () => {
 });
 
 clearBoardBtn.addEventListener("click", () => {
-  alert("clear the board!")
+  const bingoCells = document.querySelectorAll(".cell");
+
+  bingoCells.forEach(cell => {
+    cell.setAttribute("aria-pressed", "false");
+  });
 });
 
 // init board on page load

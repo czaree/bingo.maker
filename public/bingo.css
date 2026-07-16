@@ -1,10 +1,17 @@
+#bingoBoard {
+    display: grid; 
+    grid-template-columns: repeat(5, minmax(0, 1fr));  
+    gap: 5px; 
+    overflow-wrap: break-word;
+}
+
 .cell {
     display: flex;
     padding: 0.5rem;
     text-align: center;
     justify-content: center;
     align-items: center;
-    min-height: 8vh;
+    min-height: 10vh;
     white-space: normal;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -20,4 +27,11 @@
 .cell:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.45);
+}
+
+.cell[aria-pressed="true"] {
+  background: blue !important;
+  color: #FFFFFF;
+  border-color: #1d4ed8;
+  transform: scale(0.95);
 }
