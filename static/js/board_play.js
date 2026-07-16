@@ -1,6 +1,7 @@
-const rows = 5; // number of rows in board
-const cols = 5; // number of columns in board
-const totalCells = rows * cols;
+let rows = 5; // number of rows in board
+let cols = 5; // number of columns in board
+let totalCells = 25;
+let boardIsSquare = true;
 
 const clearBoardBtn = document.getElementById("clearBoardBtn");
 const newBoardBtn = document.getElementById("newBoardBtn");
@@ -10,6 +11,9 @@ let squaresBank = [] // bank of all possible cell values to assign
 
 const rowCounts = new Int32Array(rows); // counter for number of cells selected in each row
 const colCounts = new Int32Array(cols); // counter for number of cells selected in each column
+let diagCount = 0;                      // counter for number of cells selected in left diagonal
+let antiDiagCount = 0;                // counter for number of cells selected in right (anti-)diagonal
+
 const cells = []; // cache of cell DOm objects
 
 /**
@@ -17,6 +21,8 @@ const cells = []; // cache of cell DOm objects
  * an error message otherwise
  */
 function init() {
+    totalCells = rows * cols;
+    boardIsSquare = rows === cols;
     const urlParams = new URLSearchParams(window.location.search);
     const squaresParams = urlParams.get('squares');
 
@@ -109,10 +115,28 @@ board.addEventListener("click", (event) => {
     rowCounts[r] += change;
     colCounts[c] += change;
 
+    let hasWon = (rowCounts[r] === cols || colCounts[c] === rows);
+
+   // update diagonal counters if board is square
+    if (boardIsSquare) {
+        // main diagonal: (0,0), (1,1), (2,2)...
+        if (r === c) {
+            diagCount += change;
+        }
+        // anti-diagonal: (0,4), (1,3), (2,2)...
+        if (r + c === rows - 1) {
+            antiDiagCount += change;
+        }
+
+        if (diagCount === rows || antiDiagCount === rows) {
+            hasWon = true;
+        }
+    }
+
     // win condition(s) fulfilled?
-    if (rowCounts[r] === cols || colCounts[c] === rows) {
+    if (hasWon) {
         setTimeout(() => {
-            alert("BINGO!");
+            alert("BINGOOOOO!!!");
         }, 50);
     }
 });
