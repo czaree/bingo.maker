@@ -7,6 +7,10 @@ const newBoardBtn = document.getElementById("newBoardBtn");
 const board = document.getElementById("bingoBoard");
 let squares = []
 
+/**
+ * cetches and parses wordbank from URL parameters on page load if they exist, displays
+ * an error message otherwise
+ */
 function init() {
     const urlParams = new URLSearchParams(window.location.search);
     const squaresParams = urlParams.get('squares');
@@ -34,6 +38,8 @@ function newBoard(board, squares) {
     let totalCells = LENGTH * WIDTH;
     let freeSpaceIdx = Math.floor(totalCells / 2);
 
+    shuffle(squares);
+
     board.innerHTML = "";
 
     for (let i = 0; i < totalCells; i++) {
@@ -53,6 +59,23 @@ function newBoard(board, squares) {
         cell.appendChild(cellText);
         board.appendChild(cell);
     }
+}
+
+/**
+ * sorts the elements of the given array into a random order
+ * 
+ * @param {*} arr array to be randomly shuffled
+ */
+function shuffle(arr) {
+    let currIdx = arr.length;
+
+    while (currIdx != 0) {
+        let randIdx = Math.floor(Math.random() * currIdx);
+        currIdx--;
+        [arr[currIdx], arr[randIdx]] = [ arr[randIdx], arr[currIdx]]; 
+    }
+
+    return arr;
 }
 
 function checkWin(board) {
