@@ -3,11 +3,13 @@ let cols = 5; // number of columns in board
 let totalCells = 25;
 let boardIsSquare = true;
 
+const boardTitle = document.getElementById("boardTitle");
 const clearBoardBtn = document.getElementById("clearBoardBtn");
 const newBoardBtn = document.getElementById("newBoardBtn");
 
 const board = document.getElementById("bingoBoard");
 let squaresBank = [] // bank of all possible cell values to assign
+let freeSpaceText;
 
 const rowCounts = new Int32Array(rows); // counter for number of cells selected in each row
 const colCounts = new Int32Array(cols); // counter for number of cells selected in each column
@@ -25,14 +27,28 @@ function init() {
     boardIsSquare = rows === cols;
     const urlParams = new URLSearchParams(window.location.search);
     const squaresParams = urlParams.get('squares');
+    const titleParam = urlParams.get('title');
+    const freeSpaceParam = urlParams.get('free');
 
     if (!squaresParams) {
         board.innerHTML = "<p>No wordbank found in the URL. Go create one!</p>";
         return;
     }
 
+    const decompressedSquares = LZString.decompressFromEncodedURIComponent(squaresParams);
+    const decompressedTitle = LZString.decompressFromEncodedURIComponent(titleParam) || "Bingo";
+    freeSpaceText = LZString.decompressFromEncodedURIComponent(freeSpaceParam) || "FREE SPACE";
+
+    boardTitle.innerText = decompressedTitle;
+
+    // Handle the case where decompression fails (e.g., malformed URL)
+    if (!decompressedSquares) {
+        document.getElementById('bingoBoard').innerHTML = "<p>Error loading board data. The link might be broken.</p>";
+        return;
+    }
+
     squaresBank.length = 0;
-    squaresBank = decodeURIComponent(squaresParams).split(',');
+    squaresBank = decodeURIComponent(decompressedSquares).split(',');
 
     newBoard(board, [...squaresBank]);
 }
@@ -60,7 +76,7 @@ function newBoard(board, squares) {
 
         if (i == freeSpaceIdx) {
             // TODO: include optional free space customization in URL, otherwise default to free space
-            cellText.innerText = "FREE SPACE";
+            cellText.innerText = freeSpaceText;
             cellText.style.fontWeight = "bold";
         } else {
             cellText.innerText = squares.pop() || "";
@@ -126,9 +142,6 @@ board.addEventListener("click", (event) => {
             antiDiagCount += change;
         }
     }
-
-    console.log(r, c, change);
-    console.log(rowCounts, colCounts, diagCount, antiDiagCount);
 
     if (isNowSelected == false) {
         return;

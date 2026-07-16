@@ -3,6 +3,17 @@
     grid-template-columns: repeat(5, minmax(0, 1fr));  
     gap: 5px; 
     overflow-wrap: break-word;
+    margin: 2rem auto;
+}
+
+.boardTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    overflow-wrap: break-word;
+}
+
+.boardTitle::before, .boardTitle::after {
+    content: none;
 }
 
 .cell {

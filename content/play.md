@@ -2,5 +2,6 @@
 draft = false
 title = 'Play'
 +++
-## Play Some Bingo!
+Play Some Bingo!
+_____
 {{< play_board >}}
