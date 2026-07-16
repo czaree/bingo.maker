@@ -115,8 +115,6 @@ board.addEventListener("click", (event) => {
     rowCounts[r] += change;
     colCounts[c] += change;
 
-    let hasWon = (rowCounts[r] === cols || colCounts[c] === rows);
-
    // update diagonal counters if board is square
     if (boardIsSquare) {
         // main diagonal: (0,0), (1,1), (2,2)...
@@ -127,8 +125,15 @@ board.addEventListener("click", (event) => {
         if (r + c === rows - 1) {
             antiDiagCount += change;
         }
+    }
 
-        if (diagCount === rows || antiDiagCount === rows) {
+    let hasWon = (rowCounts[r] === cols || colCounts[c] === rows);
+
+    if (boardIsSquare) {
+        if (r === c && diagCount === rows) {
+            hasWon = true;
+        }
+        if (r + c === rows - 1 && antiDiagCount === rows) {
             hasWon = true;
         }
     }
@@ -151,7 +156,8 @@ clearBoardBtn.addEventListener("click", () => {
     const bingoCells = document.querySelectorAll(".cell");
 
     bingoCells.forEach(cell => {
-    cell.setAttribute("aria-pressed", "false");
+        cell.setAttribute("aria-pressed", "false");
+        cell.dataset.selected = "false";
     });
 });
 
