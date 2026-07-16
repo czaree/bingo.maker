@@ -1,13 +1,16 @@
-const length = 5;
-const width = 5;
-const totalCells = length * width;
+const rows = 5; // number of rows in board
+const cols = 5; // number of columns in board
+const totalCells = rows * cols;
 
 const clearBoardBtn = document.getElementById("clearBoardBtn");
 const newBoardBtn = document.getElementById("newBoardBtn");
 
 const board = document.getElementById("bingoBoard");
-let squares = []
-const wonLines = Set(); // track row/col/diag wins
+let squaresBank = [] // bank of all possible cell values to assign
+
+const rowCounts = new Int32Array(rows); // counter for number of cells selected in each row
+const colCounts = new Int32Array(cols); // counter for number of cells selected in each column
+const cells = []; // cache of cell DOm objects
 
 /**
  * cetches and parses wordbank from URL parameters on page load if they exist, displays
@@ -22,18 +25,18 @@ function init() {
         return;
     }
 
-    squares.length = 0;
-    squares = decodeURIComponent(squaresParams).split(',');
+    squaresBank.length = 0;
+    squaresBank = decodeURIComponent(squaresParams).split(',');
 
-    newBoard(board, [...squares]);
+    newBoard(board, [...squaresBank]);
 }
 
 
 /**
- * creates and renders a new bingo board from the full wordbank
+ * creates and renders a new bingo board from the full bank of all possible squares
  * 
  * @param {*} board div element where the new board is rendered
- * @param {*} squares wordbank of all possible squares to generate board from
+ * @param {*} squares bank of all possible squares to select board cells from
  */
 function newBoard(board, squares) {
     // construct + render board
@@ -57,12 +60,9 @@ function newBoard(board, squares) {
             cellText.innerText = squares.pop() || "";
         }
 
-        // mark as selected/dabbed when clicked
         cell.setAttribute("aria-pressed", "false");
-        cell.addEventListener("click", () => {
-            const isPressed = cell.getAttribute("aria-pressed") === "true";
-            cell.setAttribute("aria-pressed", !isPressed);
-        });
+        cell.dataset.index = i;
+        cell.dataset.selected = "false";
 
         cell.appendChild(cellText);
         board.appendChild(cell);
@@ -86,22 +86,50 @@ function shuffle(arr) {
     return arr;
 }
 
-function checkWin(board) {
-    
-}
+// when cell is clicked, change to "selected" state, update win trackers, and re-render
+board.addEventListener("click", (event) => {
+    // find btn closest to click on grid
+    const cell = event.target.closest(".cell");
+    if (!cell) return;
 
-newBoardBtn.addEventListener("click", () => {
-  newBoard(board, [...squares]);
+    // fetch current cell state
+    const index = parseInt(cell.dataset.index, 10);
+    const wasSelected = cell.dataset.selected === "true";
+    const isNowSelected = !wasSelected;
+
+    // re-render cell to flip states (selected <-> unselected)
+    cell.dataset.selected = isNowSelected ? "true" : "false";
+    cell.setAttribute("aria-pressed", isNowSelected ? "true" : "false");
+
+    // update count of selected cells in row/col/diagonal counters
+    const r = Math.floor(index / cols);
+    const c = index % cols;
+    const change = isNowSelected ? 1 : -1;
+
+    rowCounts[r] += change;
+    colCounts[c] += change;
+
+    // win condition(s) fulfilled?
+    if (rowCounts[r] === cols || colCounts[c] === rows) {
+        setTimeout(() => {
+            alert("BINGO!");
+        }, 50);
+    }
 });
 
-clearBoardBtn.addEventListener("click", () => {
-  const bingoCells = document.querySelectorAll(".cell");
+// generate new board when "Generate New Board" clicked
+newBoardBtn.addEventListener("click", () => {
+    newBoard(board, [...squaresBank]);
+});
 
-  bingoCells.forEach(cell => {
+// reset aria-pressed values of all buttons to false when "Clear Board" clicked
+clearBoardBtn.addEventListener("click", () => {
+    const bingoCells = document.querySelectorAll(".cell");
+
+    bingoCells.forEach(cell => {
     cell.setAttribute("aria-pressed", "false");
-  });
+    });
 });
 
 // init board on page load
-init(squares);
-console.log(squares)
+init(squaresBank);
