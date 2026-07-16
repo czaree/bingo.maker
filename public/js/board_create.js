@@ -11,10 +11,13 @@ function generateLink() {
         return;
     }
 
+    console.log("BITCH");
+
     // construct URL
     const encodedSquares = encodeURIComponent(squares.join(","));
 
-    const baseUrl = window.location.origin + '/play/';
+    const basePath = window.location.pathname.split('/')[1];
+    const baseUrl = window.location.origin + "/" + basePath + '/play/';
     const boardUrl = `${baseUrl}?squares=${encodedSquares}`
 
     // show 'success' window + new play link

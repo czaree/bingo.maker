@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://czaree.github.io/bingo.maker/'
 locale = 'en-us'
 title = 'bingo.maker'
 theme = 'hugo-classless'

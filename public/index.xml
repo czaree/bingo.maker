@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>bingo.maker</title>
-		<link>//localhost:1313/</link>
+		<link>http://localhost:1313/bingo.maker/</link>
 		<description>Recent content on bingo.maker</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -10,27 +10,27 @@
 		
 		
 		
-			<atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/bingo.maker/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>About</title>
-				<link>//localhost:1313/about/</link>
+				<link>http://localhost:1313/bingo.maker/about/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>//localhost:1313/about/</guid>
+				<guid>http://localhost:1313/bingo.maker/about/</guid>
 				<description>&lt;h3 id=&#34;what-is-bingomaker&#34;&gt;What is bingo.maker?&lt;/h3&gt;&#xA;&lt;p&gt;bingo.maker is a lightweight, online tool built to help quickly generate custom bingo cards for play.&lt;/p&gt;&#xA;&lt;h3 id=&#34;how-does-it-work&#34;&gt;How does it work?&lt;/h3&gt;&#xA;&lt;p&gt;TBD&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-does-the-site-run-on&#34;&gt;What does the site run on?&lt;/h3&gt;&#xA;&lt;p&gt;bingo.maker is powered by the &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo framework&lt;/a&gt; using the &lt;a href=&#34;https://github.com/mozanunal/hugo-classless&#34;&gt;hugo-classless&lt;/a&gt; template for styling, hosted publically on &lt;a href=&#34;https://docs.github.com/en/pages/getting-started-with-github-pages&#34;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Create</title>
-				<link>//localhost:1313/create/</link>
+				<link>http://localhost:1313/bingo.maker/create/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>//localhost:1313/create/</guid>
+				<guid>http://localhost:1313/bingo.maker/create/</guid>
 				<description>&lt;h2 id=&#34;create-a-bingo-board&#34;&gt;Create a Bingo Board&lt;/h2&gt;&#xA;&lt;p&gt;Enter your wordbank below to create your custom bingo board. Share the generated link with friends to play together!&#xA;&lt;div id = &#34;createBoard&#34;&gt;&#xD;&#xA;    &lt;form&gt;&#xD;&#xA;        &lt;p&gt;Your Bingo Board Name:&lt;/p&gt;&#xD;&#xA;        &lt;input id = &#34;boardTitleInput&#34; type = &#34;text&#34; required&gt;&#xD;&#xA;        &lt;p&gt;Enter each of the squares in your wordbank separated by commas or new lines (at least 24 spaces are required):&lt;/p&gt;&#xD;&#xA;        &lt;textarea id = &#34;bingoListInput&#34; rows = &#34;10&#34; required&gt;&lt;/textarea&gt;&#xD;&#xA;        &lt;p&gt;Enter the name of your freespace:&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Play</title>
-				<link>//localhost:1313/play/</link>
+				<link>http://localhost:1313/bingo.maker/play/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>//localhost:1313/play/</guid>
-				<description>&lt;h2 id=&#34;play-some-bingo&#34;&gt;Play Some Bingo!&lt;/h2&gt;&#xA;&lt;link rel = &#34;stylesheet&#34; type = &#34;text/css&#34; href = &#34;/bingo.css&#34;&gt;&#xD;&#xA;&#xD;&#xA;&lt;div id = &#34;bingoBoard&#34; style=&#34;display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));  gap: 5px; overflow-wrap: break-word;&#34;&gt;&#xD;&#xA;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;script src = &#34;/js/board_play.js&#34;&gt;&lt;/script&gt;</description>
+				<guid>http://localhost:1313/bingo.maker/play/</guid>
+				<description>&lt;h2 id=&#34;play-some-bingo&#34;&gt;Play Some Bingo!&lt;/h2&gt;&#xA;&lt;link rel = &#34;stylesheet&#34; type = &#34;text/css&#34; href = &#34;../style.css&#34;&gt;&#xD;&#xA;&lt;link rel = &#34;stylesheet&#34; type = &#34;text/css&#34; href = &#34;../bingo.css&#34;&gt;&#xD;&#xA;&#xD;&#xA;&lt;div id = &#34;bingoBoard&#34; style=&#34;display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));  gap: 5px; overflow-wrap: break-word;&#34;&gt;&#xD;&#xA;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;div&gt;&#xD;&#xA;    &lt;button id = &#34;clearBoardBtn&#34;&gt;Clear Board&lt;/button&gt;&#xD;&#xA;    &lt;button id = &#34;newBoardBtn&#34;&gt;Generate New Board&lt;/button&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;script src = &#34;../js/board_play.js&#34; defer&gt;&lt;/script&gt;</description>
 			</item>
 	</channel>
 </rss>
